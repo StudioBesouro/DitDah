@@ -31,8 +31,6 @@ export default function Home() {
 
     setPlayingSound(id);
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    
-    // MUDANÇA AQUI: de 80 para 120 para ficar mais lento
     const dotDuration = 120; 
     const dashDuration = dotDuration * 3;
     const spaceDuration = dotDuration;
@@ -62,7 +60,6 @@ export default function Home() {
       }
     });
 
-    // O timeout garante que o ícone pare de brilhar exatamente quando o som terminar
     setTimeout(() => setPlayingSound(null), (time - audioContext.currentTime) * 1000);
   };
 
@@ -80,6 +77,43 @@ export default function Home() {
     <div className="home-page">
       <Header />
       <main className="content">
+        
+        {/* O QUE É */}
+        <section className="section-card">
+          <h2 className="title">O que é Código Morse?</h2>
+          <p className="text">
+            O Código Morse é um sistema de comunicação que usa sinais curtos (pontos)
+            e longos (traços) para representar letras e números.
+          </p>
+        </section>
+
+        {/* COMO FUNCIONA */}
+<section className="section-card">
+  <h2 className="title">Como Funciona?</h2>
+  <div className="signals-container"> {/* Usando a classe do CSS */}
+    <div className="signal-box">
+      <h3 className="signal-title">• Ponto (dit)</h3>
+      <p className="signal-desc">Sinal curto (1 unidade)</p>
+    </div>
+    <div className="signal-box">
+      <h3 className="signal-title">– Traço (dah)</h3>
+      <p className="signal-desc">Sinal longo (3 unidades)</p>
+    </div>
+  </div>
+</section>
+
+        {/* REGRAS */}
+        <section className="section-card">
+          <h2 className="title">Regras Básicas</h2>
+          <ul style={{ paddingLeft: '20px', color: '#334155', lineHeight: '1.8' }}>
+            <li>1. Um ponto (.) tem duração de 1 unidade</li>
+            <li>2. Um traço (-) tem duração de 3 unidades</li>
+            <li>3. Espaço entre letras: 3 unidades</li>
+            <li>4. Espaço entre palavras: 7 unidades</li>
+          </ul>
+        </section>
+
+        {/* ALFABETO */}
         <section className="section-card">
           <h2 className="title">Alfabeto em Morse</h2>
           <div className="morse-grid">
@@ -97,8 +131,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* NÚMEROS */}
         <section className="section-card">
-          <h2 className="title">Numbers em Morse</h2>
+          <h2 className="title">Números em Morse</h2>
           <div className="morse-grid">
             {numeros.map((item, i) => (
               <div 
