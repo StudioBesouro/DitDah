@@ -241,3 +241,153 @@ body {
   justify-content: flex-end;
   margin-bottom: -10px;
 }
+/* MODAL SOBRE */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end; /* Alinha no fundo como nos apps mobile */
+  justify-content: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2563eb;
+}
+
+.close-btn {
+  background: #f1f5f9;
+  border: none;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body p {
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Ajuste no PC para não ficar só no rodapé */
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+  }
+  .modal-content {
+    border-radius: 20px;
+  }
+}
+/* AJUSTES PARA CELULAR (MOBILE) */
+@media (max-width: 600px) {
+  /* Header: Coloca a logo em cima e os botões embaixo ou diminui o gap */
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  /* Nav: Faz os botões ocuparem a largura necessária e rolar se precisar */
+  .nav {
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .nav-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+
+  .nav-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Conteúdo: Diminui os paddings laterais para o card aproveitar a tela */
+  .content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .section-card {
+    padding: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  /* Alfabeto: 2 colunas no celular para não ficar muito pequeno */
+  .morse-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .morse-letter {
+    font-size: 1.2rem;
+  }
+
+  /* Footer: Empilha os textos e links */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Ajuste para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 380px) {
+  .morse-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nav-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
