@@ -1,0 +1,243 @@
+/* RESET BÁSICO */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* CONTAINER PRINCIPAL */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+}
+
+/* HEADER - OCUPANDO A TELA TODA */
+.header {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1024px;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none; /* Remove sublinhado do link da logo */
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* NAV - ATUALIZADO PARA COMPONENTES DE LINK */
+.nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Estilo para os links que parecem botões */
+.nav-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  background: #e2e8f0;
+  color: #334155;
+  font-weight: 600;
+  text-decoration: none; /* Importante para NavLink */
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Quando a rota está ativa (NavLink faz isso sozinho) */
+.nav-button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.nav-button:hover:not(.active) {
+  background: #cbd5e1;
+}
+
+/* CONTEÚDO (MAIN) - CENTRALIZADO */
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* CARDS DO FIGMA */
+.section-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+/* GRID DE COMO FUNCIONA */
+.signals-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .signals-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.signal-box {
+  background-color: #eff6ff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dbeafe;
+}
+
+.signal-title {
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.signal-desc {
+  color: #334155;
+  margin: 0;
+}
+
+/* GRID DO ALFABETO */
+.morse-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .morse-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .morse-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* ITEM DO ALFABETO */
+.morse-item {
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #e2e8f0;
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.morse-item:hover {
+  border-color: #60a5fa;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.morse-letter {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.morse-code {
+  display: block;
+  font-size: 0.9rem;
+  color: #000000;
+  font-family: ui-monospace, monospace;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  color: #2563eb;
+}
+
+/* Feedback visual ao tocar o som */
+.morse-item.playing {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  transform: scale(0.98);
+}
+
+.volume-icon {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}
