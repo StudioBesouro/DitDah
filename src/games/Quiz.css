@@ -1,0 +1,13 @@
+.quiz-container { max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+.back-button { background: none; border: none; color: #64748b; cursor: pointer; margin-bottom: 1rem; }
+.quiz-card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); text-align: center; }
+.progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; margin-bottom: 2rem; overflow: hidden; }
+.progress-bar .fill { height: 100%; background: #2563eb; transition: width 0.3s; }
+.morse-display { font-size: 3rem; font-family: monospace; background: #f8fafc; padding: 2rem; border-radius: 0.5rem; margin-bottom: 2rem; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.option-button { padding: 1rem; font-size: 1.5rem; font-weight: bold; border: 2px solid #e2e8f0; border-radius: 0.5rem; cursor: pointer; transition: 0.2s; }
+.option-button.correct { background: #dcfce7; border-color: #22c55e; color: #166534; }
+.option-button.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+.next-button { margin-top: 1.5rem; width: 100%; padding: 1rem; background: #2563eb; color: white; border: none; border-radius: 0.5rem; font-weight: bold; cursor: pointer; }
+.score-number { font-size: 4rem; font-weight: 800; color: #2563eb; }
+.back-link { display: block; margin: 1rem auto; color: #64748b; background: none; border: none; cursor: pointer; }

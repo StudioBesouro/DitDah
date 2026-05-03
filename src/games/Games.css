@@ -1,0 +1,16 @@
+/* Dentro de Games.css */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 20px 0;
+}
+
+/* Garanta que o botão do card não tenha fundo padrão de botão */
+.game-card {
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
